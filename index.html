@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#f8f4ed">
+<meta property="og:title" content="Maroua">
+<meta property="og:description" content="Invitation de mariage">
+<meta property="og:image" content="https://da3wati.github.io/M-B/preview.jpg">
+<meta property="og:url" content="https://da3wati.github.io/M-B/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maroua">
+<meta name="twitter:description" content="Invitation de mariage">
+<meta name="twitter:image" content="https://da3wati.github.io/M-B/preview.jpg">
+
+<title>Maroua</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;500;600&family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #f8f4ed;
+    color: #111;
+    font-family: "Cairo", sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================
+   COVER
+========================= */
+
+#introScreen {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    z-index: 9999;
+
+    background-image:
+        linear-gradient(rgba(55,25,50,.10), rgba(55,25,50,.22)),
+        url("images/image_1.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    cursor: pointer;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+#introScreen.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.intro-text {
+    position: absolute;
+    bottom: 8%;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-family: "Cairo", sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 10px rgba(0,0,0,.55);
+}
+
+.intro-names {
+    font-family: "Great Vibes", cursive;
+    font-size: 42px;
+    margin-bottom: 8px;
+}
+
+/* =========================
+   INVITATION
+========================= */
+
+#invitation {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.2s ease;
+}
+
+/* الخلفية الواحدة الثابتة للدعوة كلها */
+#invitation::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.035),
+            rgba(255,255,255,0.035)
+        ),
+        url(images/image_1.png);
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+#invitation.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.page {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+    padding: 45px 20px 70px;
+}
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.30);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(177,140,65,.20);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 100;
+    cursor: pointer;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.04);
+}
+
+.music-button span {
+    font-size: 20px;
+    color: #111;
+}
+
+/* =========================
+   GLASS — SAME STYLE AS
+   THE REFERENCE FILE
+========================= */
+
+.glass {
+    background: rgba(255,255,255,.12);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    border: 1px solid rgba(255,255,255,.22);
+
+    box-shadow: 0 10px 35px rgba(90,70,40,.025);
+    border-radius: 24px;
+
+    padding: 32px 22px;
+    margin-bottom: 28px;
+}
+
+/* =========================
+   SECTION 1
+========================= */
+
+.main-intro {
+    text-align: center;
+    min-height: auto;
+}
+
+.bismillah {
+    font-family: "Amiri", serif;
+    font-size: 28px;
+    color: #111;
+    margin-bottom: 22px;
+}
+
+.quran {
+    font-family: "Amiri", serif;
+    font-size: 27px;
+    line-height: 2.05;
+    color: #111;
+    margin-bottom: 25px;
+    direction: rtl;
+}
+
+.verse-ref {
+    font-family: "Amiri", serif;
+    font-size: 17px;
+    color: #111;
+    margin-top: -15px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-family: "Amiri", serif;
+    font-size: 34px;
+    color: #111;
+    margin-bottom: 14px;
+}
+
+.family-invite {
+    font-family: "Amiri", serif;
+    font-size: 22px;
+    line-height: 2;
+    color: #111;
+    margin: -8px 0 22px;
+    text-align: center;
+}
+
+.names {
+    font-family: "Great Vibes", cursive;
+    font-size: 68px;
+    line-height: 1;
+    color: #111;
+    margin: 10px 0 20px;
+    direction: ltr;
+}
+
+.ampersand {
+    display: inline-block;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    color: #111;
+    margin: 0 8px;
+    vertical-align: middle;
+}
+
+.description {
+    font-family: "Amiri", serif;
+    font-size: 22px;
+    line-height: 2;
+    color: #111;
+}
+
+.no-children {
+    margin-top: 18px;
+    font-family: "Cairo", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: .3px;
+    color: #111;
+}
+
+/* =========================
+   DATE / TIME
+========================= */
+
+.date-section {
+    text-align: center;
+}
+
+.date {
+    font-family: "Amiri", serif;
+    font-size: 38px;
+    color: #111;
+    margin: 12px 0;
+    font-weight: 700;
+}
+
+.time {
+    font-size: 23px;
+    color: #111;
+    margin-top: 10px;
+}
+
+.time-number {
+    font-family: "Great Vibes", cursive;
+    font-size: 62px;
+    display: block;
+    margin-top: 4px;
+}
+
+/* =========================
+   HALL
+========================= */
+
+.hall-image {
+    width: 100%;
+    display: block;
+    border-radius: 22px;
+    margin: 20px 0;
+    box-shadow: 0 12px 35px rgba(0,0,0,.12);
+}
+
+.location-name {
+    font-family: "Amiri", serif;
+    font-size: 31px;
+    color: #111;
+    margin: 10px 0 4px;
+}
+
+.location-city {
+    font-size: 21px;
+    color: #111;
+}
+
+.map-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 13px 28px;
+    border-radius: 30px;
+
+    background: rgba(17,17,17,.92);
+    color: white;
+
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 15px;
+
+    box-shadow: 0 7px 20px rgba(0,0,0,.12);
+}
+
+.map-button svg {
+    width: 19px;
+    height: 19px;
+    stroke: white;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* =========================
+   QR
+========================= */
+
+.qr-area {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+}
+
+#qrcode {
+    width: 170px;
+    height: 170px;
+    background: #fff;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+}
+
+#qrcode canvas,
+#qrcode img {
+    width: 154px !important;
+    height: 154px !important;
+}
+
+.qr-text {
+    font-size: 17px;
+    color: #111;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section {
+    text-align: center;
+}
+
+.countdown-title {
+    font-family: "Amiri", serif;
+    font-size: 31px;
+    color: #111;
+    margin-bottom: 5px;
+}
+
+.countdown-subtitle {
+    font-size: 18px;
+    color: #111;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    direction: ltr;
+    margin-top: 25px;
+    flex-wrap: nowrap;
+}
+
+.count-box {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+
+    border: 1.5px solid #111;
+    background: rgba(255,255,255,.14);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.025);
+}
+
+.count-number {
+    font-family: "Cairo", sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: #111;
+    line-height: 1.1;
+}
+
+.count-label {
+    font-family: "Amiri", serif;
+    font-size: 13px;
+    color: #111;
+    margin-top: 3px;
+}
+
+/* =========================
+   NO PHOTOGRAPHY
+========================= */
+
+.no-photo-section {
+    text-align: center;
+}
+
+.no-photo-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,.25);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #111;
+    background: rgba(255,255,255,.10);
+}
+
+.no-photo-icon svg {
+    width: 30px;
+    height: 30px;
+    stroke: #111;
+    fill: none;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.warning {
+    font-family: "Amiri", serif;
+    font-size: 29px;
+    color: #111;
+    margin-bottom: 12px;
+}
+
+.warning-text {
+    font-family: "Amiri", serif;
+    font-size: 21px;
+    line-height: 2;
+    color: #111;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.footer {
+    text-align: center;
+    padding: 25px 10px 50px;
+}
+
+.footer-text {
+    font-family: "Amiri", serif;
+    font-size: 26px;
+    line-height: 2;
+    color: #111;
+}
+
+.footer-names {
+    font-family: "Great Vibes", cursive;
+    font-size: 50px;
+    color: #111;
+    margin-top: 15px;
+    direction: ltr;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:600px) {
+    .page {
+        padding: 35px 15px 60px;
+    }
+
+    .names {
+        font-size: 58px;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .quran {
+        font-size: 23px;
+    }
+
+    .family-invite {
+        font-size: 20px;
+    }
+
+    .description {
+        font-size: 21px;
+    }
+
+    .date {
+        font-size: 32px;
+    }
+
+    .time-number {
+        font-size: 56px;
+    }
+
+    .countdown {
+        gap: 7px;
+    }
+
+    .count-box {
+        width: 62px;
+        height: 62px;
+    }
+
+    .count-number {
+        font-size: 17px;
+    }
+
+    .count-label {
+        font-size: 12px;
+    }
+
+    .warning {
+        font-size: 25px;
+    }
+
+    .warning-text {
+        font-size: 19px;
+    }
+
+    .footer-text {
+        font-size: 22px;
+    }
+
+    .footer-names {
+        font-size: 45px;
+    }
+
+}
+
+@media (max-width:380px) {
+    .countdown {
+        gap: 5px;
+    }
+
+    .count-box {
+        width: 57px;
+        height: 57px;
+    }
+
+    .count-number {
+        font-size: 16px;
+    }
+
+    .count-label {
+        font-size: 11px;
+    }
+
+    .names {
+        font-size: 48px;
+    }
+}
+
+/* =========================
+   NO CHILDREN
+========================= */
+.no-children-section {
+    text-align: center;
+}
+
+.no-children-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #111;
+    background: rgba(255,255,255,.10);
+}
+
+.no-children-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: #111;
+    fill: none;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.no-children-title {
+    font-family: "Amiri", serif;
+    font-size: 29px;
+    color: #111;
+    margin-bottom: 12px;
+}
+
+.no-children-text {
+    font-family: "Amiri", serif;
+    font-size: 21px;
+    line-height: 2;
+    color: #111;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     COVER
+========================= -->
+
+<div id="introScreen" onclick="openInvitation()">
+    <div class="intro-text">
+        <div class="intro-names">Maroua &amp; Brahim</div>
+        Cliquez pour ouvrir l'invitation
+    </div>
+</div>
+
+
+
+<main id="invitation">
+
+    <button class="music-button"
+            onclick="toggleMusic(event)"
+            aria-label="Musique">
+        <span id="musicIcon">♪</span>
+    </button>
+
+    <div class="page">
+
+        <!-- 1. INVITATION + AYAH + FAMILLE -->
+
+        <section class="glass main-intro">
+
+            <div class="section-title">
+                Invitation de mariage
+            </div>
+
+            <div class="quran">
+                ﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم
+                مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+                لِّتَسْكُنُوا إِلَيْهَا
+                وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ﴾
+            </div>
+
+            <div class="verse-ref">
+                ﴿ الروم : 21 ﴾
+            </div>
+
+            <div class="family-invite">
+                La famille LASGA a le plaisir de vous convier
+                à célébrer le mariage de leur fille
+            </div>
+
+            <div class="names">
+                Maroua
+            </div>
+
+            <p class="description">
+                Nous serions honorés de vous compter parmi nous
+                pour partager ce merveilleux moment de bonheur et de joie.
+            </p>
+
+            
+
+        </section>
+
+
+        <!-- 2. DATE + TIME -->
+
+        <section class="glass date-section">
+
+            <div class="section-title">
+                موعد فرحتنا
+            </div>
+
+            <div class="date">
+                17 Décembre 2026
+            </div>
+
+            <div class="time">
+                À partir de
+                <span class="time-number">21h00</span>
+            </div>
+
+        </section>
+
+
+        <!-- 3. HALL + PHOTO + MAP + QR -->
+
+        <section class="glass" style="text-align:center;">
+
+            <div class="section-title">
+                Le lieu de la célébration
+            </div>
+
+            <img src="images/image_2.png"
+                 class="hall-image"
+                 alt="Palace Events">
+
+            <div class="location-name">
+                PALACE EVENTS
+            </div>
+
+            <div class="location-city">
+                Alger
+            </div>
+
+            <a class="map-button"
+               href="https://maps.app.goo.gl/AMoZVpbHkcSEg5PRA"
+               target="_blank"
+               rel="noopener">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 21s7-6.2 7-12
+                             a7 7 0 1 0-14 0
+                             c0 5.8 7 12 7 12Z"></path>
+                    <circle cx="12" cy="9" r="2.3"></circle>
+                </svg>
+
+                Voir l'itinéraire
+            </a>
+
+            <div class="qr-area">
+                <div id="qrcode"></div>
+                <div class="qr-text">
+                    Scannez pour ouvrir la localisation
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- 4. COUNTDOWN -->
+
+        <section class="glass countdown-section">
+
+            <div class="countdown-title">
+                Compte à rebours
+            </div>
+
+            <div class="countdown-subtitle">
+                Jusqu'au grand jour
+            </div>
+
+            <div class="countdown">
+
+                <div class="count-box">
+                    <div class="count-number" id="days">00</div>
+                    <div class="count-label">Jours</div>
+                </div>
+
+                <div class="count-box">
+                    <div class="count-number" id="hours">00</div>
+                    <div class="count-label">Heures</div>
+                </div>
+
+                <div class="count-box">
+                    <div class="count-number" id="minutes">00</div>
+                    <div class="count-label">Minutes</div>
+                </div>
+
+                <div class="count-box">
+                    <div class="count-number" id="seconds">00</div>
+                    <div class="count-label">Secondes</div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- 5. NO PHOTOGRAPHY -->
+
+        <section class="glass no-photo-section">
+
+            <div class="no-photo-icon">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 7h4l1.5-2h5L16 7h4
+                             a1 1 0 0 1 1 1v10
+                             a1 1 0 0 1-1 1H4
+                             a1 1 0 0 1-1-1V8
+                             a1 1 0 0 1 1-1Z"></path>
+                    <circle cx="12" cy="13" r="3"></circle>
+                    <path d="M4 4L20 20"></path>
+                </svg>
+            </div>
+
+            <div class="warning">
+                PHOTOGRAPHIE INTERDITE
+            </div>
+
+            <p class="warning-text">
+                Afin de préserver l'intimité de cette soirée,
+                nous vous remercions de ne pas prendre de photos
+                ni de vidéos.
+            </p>
+
+        </section>
+
+
+
+        <!-- 6. NO CHILDREN -->
+
+        <section class="glass no-children-section">
+
+            <div class="no-children-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="9" cy="7" r="2.5"></circle>
+                    <path d="M4.5 18c.4-3.1 1.9-5 4.5-5s4.1 1.9 4.5 5"></path>
+                    <path d="M16 4l5 5"></path>
+                    <path d="M21 4l-5 5"></path>
+                </svg>
+            </div>
+
+            <div class="no-children-title">
+                ENFANTS INTERDITS
+            </div>
+
+            <p class="no-children-text">
+                Merci de venir sans enfants.
+            </p>
+
+        </section>
+
+        <!-- 6. FINAL -->
+
+        <div class="footer">
+
+            <div class="footer-text">
+                Nous avons hâte de vous retrouver
+                <br>
+                et nous attendons votre présence
+                avec beaucoup de joie.
+            </div>
+
+            <div class="footer-names">
+                Maroua
+            </div>
+
+        </div>
+
+    </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+const introScreen = document.getElementById("introScreen");
+const invitation = document.getElementById("invitation");
+const music = document.getElementById("weddingMusic");
+const musicIcon = document.getElementById("musicIcon");
+
+function openInvitation() {
+
+    introScreen.classList.add("hide");
+
+    setTimeout(function() {
+        invitation.classList.add("show");
+    }, 300);
+
+    music.play()
+        .then(function() {
+            musicIcon.textContent = "♫";
+        })
+        .catch(function(error) {
+            console.log("Music autoplay:", error);
+        });
+}
+
+function toggleMusic(event) {
+
+    event.stopPropagation();
+
+    if (music.paused) {
+
+        music.play()
+            .then(function() {
+                musicIcon.textContent = "♫";
+            });
+
+    } else {
+
+        music.pause();
+        musicIcon.textContent = "♪";
+
+    }
+}
+
+/* QR CODE */
+window.addEventListener("load", function() {
+
+    if (typeof QRCode !== "undefined") {
+
+        new QRCode(document.getElementById("qrcode"), {
+            text: "https://maps.app.goo.gl/AMoZVpbHkcSEg5PRA",
+            width: 154,
+            height: 154,
+            colorDark: "#111111",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+
+    }
+
+});
+
+/* COUNTDOWN */
+const weddingDate = new Date(
+    "2026-12-17T21:00:00+01:00"
+).getTime();
+
+function updateCountdown() {
+
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    if (distance <= 0) {
+
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+
+        return;
+    }
+
+    const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+    );
+
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+    );
+
+    const seconds = Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+    );
+
+    document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>
+
+```
+````
