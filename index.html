@@ -53,7 +53,7 @@ body {
 
     background-image:
         linear-gradient(rgba(55,25,50,.10), rgba(55,25,50,.22)),
-        url("images/image_1.png");
+        url("cover.jpg");
 
     background-size: cover;
     background-position: center;
@@ -116,7 +116,7 @@ body {
             rgba(255,255,255,0.035),
             rgba(255,255,255,0.035)
         ),
-        url(images/image_1.png);
+        url("cover.jpg");
     background-size: 100% 100%;
     background-position: center center;
     background-repeat: no-repeat;
@@ -620,6 +620,7 @@ body {
 /* =========================
    NO CHILDREN
 ========================= */
+
 .no-children-section {
     text-align: center;
 }
@@ -638,8 +639,8 @@ body {
 }
 
 .no-children-icon svg {
-    width: 32px;
-    height: 32px;
+    width: 31px;
+    height: 31px;
     stroke: #111;
     fill: none;
     stroke-width: 1.6;
@@ -647,14 +648,14 @@ body {
     stroke-linejoin: round;
 }
 
-.no-children-title {
+.children-warning {
     font-family: "Amiri", serif;
     font-size: 29px;
     color: #111;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
-.no-children-text {
+.children-warning-text {
     font-family: "Amiri", serif;
     font-size: 21px;
     line-height: 2;
@@ -677,7 +678,7 @@ body {
     </div>
 </div>
 
-
+<audio id="weddingMusic" src="music.mp3" loop preload="auto"></audio>
 
 <main id="invitation">
 
@@ -722,7 +723,6 @@ body {
                 pour partager ce merveilleux moment de bonheur et de joie.
             </p>
 
-            
 
         </section>
 
@@ -755,7 +755,7 @@ body {
                 Le lieu de la célébration
             </div>
 
-            <img src="images/image_2.png"
+            <img src="c82deae0-2f51-4c7b-b798-ba43966f8297.png"
                  class="hall-image"
                  alt="Palace Events">
 
@@ -846,6 +846,7 @@ body {
                     <circle cx="12" cy="13" r="3"></circle>
                     <path d="M4 4L20 20"></path>
                 </svg>
+
             </div>
 
             <div class="warning">
@@ -875,17 +876,17 @@ body {
                 </svg>
             </div>
 
-            <div class="no-children-title">
-                ENFANTS INTERDITS
+            <div class="children-warning">
+                ENFANTS NON ADMIS
             </div>
 
-            <p class="no-children-text">
+            <p class="children-warning-text">
                 Merci de venir sans enfants.
             </p>
 
         </section>
 
-        <!-- 6. FINAL -->
+        <!-- 7. FINAL -->
 
         <div class="footer">
 
@@ -1022,6 +1023,7 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 </script>
+
 </body>
 </html>
 
